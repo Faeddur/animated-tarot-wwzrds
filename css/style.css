@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  z-index: 2;
+  width: 15rem;
+  transform: translate(-50%, 0);
+}
+
+.logo svg {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  background-image: url('../img/bg.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cards-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  perspective: 1000px;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card {
+  min-width: 12rem;
+  aspect-ratio: 9/16;
+  border-radius: 0.5rem;
+  will-change: transform;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: box-shadow 0.2s ease-out;
+}
+
+.card:hover {
+  z-index: 1;
+  box-shadow:
+    0 0 1rem  #fff,
+    0 0 2rem  #f0f,
+    0 0 3rem  #0ff;
+}
+
+
+.card__back,
+.card__front {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  backface-visibility: hidden;
+}
+
+.card__back {
+  background-image: url('../img/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card__front {
+  transform: rotateY(-180deg) translateZ(1px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.reset {
+  font-family: 'Jim Nightshade', cursive;
+  font-size: 2rem;
+  z-index: 2;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  bottom: 3rem;
+  transform: translateX(-50%);
+  padding: 0.5rem 2rem;
+  outline: none;
+  border: 1px solid rgb(242, 164, 234);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(16, 16, 39);
+  transition: box-shadow 0.2s ease-out;
+}
+
+.reset:hover {
+  box-shadow:
+    0 0 1rem  #fff,
+    0 0 2rem  #f0f,
+    0 0 3rem  #0ff;
+}
